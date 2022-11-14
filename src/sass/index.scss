@@ -1,0 +1,31 @@
+@import './common';
+
+//utils
+@import './utils/variables';
+@import './utils/visually-hidden';
+@import './utils/mixin';
+@import './utils/_breakpoints';
+
+// base styles
+@import './base/reset';
+@import './base/container';
+@import './base/body-section';
+
+//components
+@import './components/modal';
+@import './components/filmDetails-modal';
+@import './components/formModal';
+@import './components/btn';
+@import './components/titles';
+@import './components/pagination';
+@import './components/spinner';
+
+//layouts
+@import './layouts/header';
+@import './layouts/main';
+@import './layouts/footer';
+
+// collection
+@import './base/collection';
+
+@import './trailer-btn';

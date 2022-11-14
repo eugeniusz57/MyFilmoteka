@@ -1,0 +1,142 @@
+.main {
+  flex: 1 1 auto;
+}
+
+.collection {
+  padding: 20px 20px 0px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: auto;
+  gap: 32px;
+
+  @include tablet {
+    grid-template-columns: auto auto;
+    padding: 60px 32px 0px;
+  }
+
+  @include desktop {
+    grid-template-columns: auto auto auto;
+  }
+}
+.collection__item {
+  cursor: pointer;
+  min-width: 200px;
+  max-width: 280px;
+
+  @include tablet {
+    max-width: 336px;
+  }
+
+  @include desktop {
+    max-width: 395px;
+  }
+
+  transform: scale(1);
+  @include transition(
+    $one: box-shadow,
+    $two: transform,
+    $time: 1000ms,
+    $func: cubic-bezier(0.075, 0.82, 0.165, 1)
+  );
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+    transform: scale(1.05);
+  }
+}
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__image-wrap {
+  min-width: 200px;
+  height: 402px;
+
+  @include tablet {
+    width: 336px;
+    height: 455px;
+  }
+
+  @include desktop {
+    width: 395px;
+    height: 594px;
+  }
+}
+
+.card__image {
+  display: block;
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card__wrap {
+  padding-top: 12px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  flex-grow: 1;
+
+  @include mobile {
+    font-size: 12px;
+    line-height: 1.33;
+  }
+
+  @include desktop {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+.card__title {
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-size: inherit;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
+  // .collection__item:hover &,
+  // .collection__item:focus &{
+  //   text-overflow: clip;
+  //   overflow: visible;
+  //   white-space: normal;
+  // }
+}
+.card__data {
+  display: flex;
+  align-items: flex-end;
+  color: #ff6b08;
+}
+.card__genre {
+  list-style: none;
+}
+
+.card__year {
+  margin-left: 6px;
+}
+
+.card-film__rating {
+  @include flexCenter();
+  width: 36px;
+  height: 16px;
+
+  margin-left: 8px;
+
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: white;
+  border-radius: 5px;
+  background-color: $accentBg-color;
+
+  @include desktop {
+    width: 40px;
+    height: 20px;
+  }
+}
